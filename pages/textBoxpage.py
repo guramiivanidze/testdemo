@@ -5,6 +5,7 @@ from Configuration import config
 import unittest
 
 
+
 class TestTextboxpage(unittest.TestCase):
     elements = {
         "full_name_input": (By.ID, "userName"),
@@ -19,7 +20,7 @@ class TestTextboxpage(unittest.TestCase):
         self.driver = config.DRIVER
         self.driver.get(config.BASE_URL + "text-box")
 
-    def test_Is_name_Show(self):
+    def test_1_Is_name_Show(self):
         self.driver.find_element(*self.elements["full_name_input"]).send_keys(data.names["first_name"])
         self.driver.find_element(*self.elements["userEmail_input"]).send_keys(data.emails["random_email"])
         self.driver.find_element(*self.elements["current_Address_input"]).send_keys(
@@ -32,7 +33,7 @@ class TestTextboxpage(unittest.TestCase):
                          "Name:" + data.names["first_name"],
                          )
 
-    def test_Is_email_show(self):
+    def test_2_Is_email_show(self):
         self.driver.find_element(*self.elements["full_name_input"]).send_keys(data.names["first_name"])
         self.driver.find_element(*self.elements["userEmail_input"]).send_keys(data.emails["random_email"])
         self.driver.find_element(*self.elements["current_Address_input"]).send_keys(
@@ -45,7 +46,7 @@ class TestTextboxpage(unittest.TestCase):
                          "Email:" + data.emails["random_email"],
                          )
 
-    def test_Is_CurrentAddress_show(self):
+    def test_3_Is_CurrentAddress_show(self):
         self.driver.find_element(*self.elements["full_name_input"]).send_keys(data.names["first_name"])
         self.driver.find_element(*self.elements["userEmail_input"]).send_keys(data.emails["random_email"])
         self.driver.find_element(*self.elements["current_Address_input"]).send_keys(
@@ -58,7 +59,7 @@ class TestTextboxpage(unittest.TestCase):
                          "Current Address :" + data.current_Address["full_address"],
                          )
 
-    def test_Is_permanentAddress_show(self):
+    def test_4_Is_permanentAddress_show(self):
         self.driver.find_element(*self.elements["full_name_input"]).send_keys(data.names["first_name"])
         self.driver.find_element(*self.elements["userEmail_input"]).send_keys(data.emails["random_email"])
         self.driver.find_element(*self.elements["current_Address_input"]).send_keys(
@@ -72,7 +73,7 @@ class TestTextboxpage(unittest.TestCase):
                          )
 
     def tearDown(self):
-        self.driver.close()
+       pass
 
 
 if __name__ == '__main__':
